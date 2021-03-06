@@ -5,18 +5,8 @@ import random
 from dotenv import load_dotenv
 import os
 
-from flask import Flask, render_template, url_for
-
 load_dotenv('.env')
 wikipedia.set_lang('ru')
-
-app = Flask(__name__)
-app.config['SECRET_KEY'] = 'yandexLyceum'
-
-
-@app.route('/vk_stat')
-def vk_stat():
-    return render_template("vk_stat.html")
 
 
 def main():
@@ -53,4 +43,4 @@ def main():
 
 
 if __name__ == '__main__':
-    app.run()
+    main()
