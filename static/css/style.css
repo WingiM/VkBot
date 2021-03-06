@@ -1,0 +1,15 @@
+.table {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.cities {
+    width: 50%;
+}
+
+.tr {
+    text-align: left;
+}

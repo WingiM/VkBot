@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>VK Statistics</title>
+</head>
+<body>
+{% extends "base.html" %}
+{% block content %}
+<div>
+	<h1 style="text-align: center; color:blueviolet">Activities</h1>
+	<table class="table">
+		{% set acts = stats['activity'] %}
+		{% for act in acts %}
+		<tr class="tr">
+			<td style="background-color: blueviolet">{{ act }}</td>
+			<td style="background-color: deeppink">{{ acts[act] }}</td>
+		</tr>
+		{% endfor %}
+	</table>
+</div>
+
+<div>
+	<h1 style="text-align: center; color: mediumseagreen">Ages</h1>
+	<table class="table">
+		{% set ages = stats['ages'] %}
+		{% for age in ages %}
+		<tr class="tr">
+			<td style="background-color: mediumseagreen">{{ age }}</td>
+			<td style="background-color: cyan">{{ ages[age] }}</td>
+		</tr>
+		{% endfor %}
+	</table>
+</div>
+
+<div>
+	<h1 style="text-align: center; color: deeppink">Cities</h1>
+	<table class="table cities">
+		{% for city in stats['cities'] %}
+		<tr class="tr">
+			<td style="background-color: deeppink;">{{ city }}</td>
+		</tr>
+		{% endfor %}
+	</table>
+</div>
+{% endblock %}
+</body>
+</html>
