@@ -29,9 +29,7 @@ def search(toponym, maptype):
         "ll": coords,
         'l': maptype
     }
-    print(maptype)
     response = requests.get(STATIC_API_URL, params=params)
     image = response.content
-    print(response.url)
     with open('static/img/resp.jpg', 'wb') as img:
         img.write(image)

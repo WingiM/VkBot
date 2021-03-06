@@ -85,9 +85,12 @@ def main():
                                  keyboard=json.dumps(keyboard), message="Выберите, как отобразить картинку")
                 attach = True
             else:
-                search(name, event.obj.message['payload'].split(':')[1].rstrip('"}').lstrip('"'))
-                vk.messages.send(user_id=event.obj.message['from_id'], random_id=random.randint(0, 2 ** 64),
+                try:
+                    search(name, event.obj.message['payload'].split(':')[1].rstrip('"}').lstrip('"'))
+                    vk.messages.send(user_id=event.obj.message['from_id'], random_id=random.randint(0, 2 ** 64),
                                  message=f"А вот и {name}", attachment=get_photo())
+                except Exception as e:
+                    pass
                 attach = False
 
 
